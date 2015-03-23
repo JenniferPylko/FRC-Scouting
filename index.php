@@ -11,11 +11,11 @@
 		<h1 class="scouting">Match Scouting</h1>
 		<br/>
 		<form action="scout.php" method="POST" class="login">
-			Your Team Number:<input type="number" name="num"/>
+			Your Team Number:<input type="number" name="num" value="1" min="1"/>
 			<br/>
 			Your Name:<input name="name"/>
 			<br/>
-			Match Number:<input type="number" name="match"/>
+			Match Number:<input type="number" name="match" value="1" min="1"/>
 			<br/>
 			Event:<select name="event">
 				<?php
