@@ -1,0 +1,108 @@
+body {background:#1e208d}
+article {
+	background:#FFFFFF;
+	width:70%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	padding-top:10px;
+	font-family:arial;
+	border: 3px solid #1e208d;
+}
+h1 {
+	font-size:60px;
+	margin: 5px;
+}
+h1.scouting {
+	text-align:right;
+	padding-right:50%;
+	margin: 5px;
+	margin-right: 0px;
+	color: #1e208d;
+}
+p {
+	text-align:justify;
+	text-indent:2em;
+	padding:1%;
+}
+form.login {
+	text-align:right;
+	padding-right:50%;
+}
+
+h3{
+	display: inline;
+	font-size: 20pt;
+	text-align: left;
+}
+/* Used for debugging layout 
+td, tr, th, table{
+	border-style: solid;
+}*/
+
+.subtable {
+	margin-left: 20pt;
+}
+
+.subtable tr td, .subtable tr th {
+	padding-left: 10pt;
+}
+
+.subsubtable {
+	display:inline;
+}
+
+h4 {
+	display: inline;
+	font-weight: bold;
+	font-size: 14pt;
+	text-align: left;
+}
+
+textarea {
+	width: 100%;
+	display: block;
+}
+/* Menubar */
+/* CSS for menubar modified from https://www.servage.net/blog/2009/03/20/create-a-cool-css-based-drop-down-menu/ */
+ul.navbar, .navbar ul  {
+	width:70%;
+	text-align:center;
+	padding-left:15%;
+	padding-right:15%;
+	padding-top:0;
+  font-family: Arial, Verdana;
+  font-size: 12px;
+  list-style: none;
+}
+ul.navbar li {
+  display: block;
+  position: relative;
+  float: left;
+  width:25%;
+  padding-top:0;
+}
+ul.navbar li ul li{width:100%;}
+ul.navbar li ul { display: none; min-width: 100%;}
+ul.navbar li a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  border-top: 1px solid #ffffff;
+  padding: 5px 15px 5px 15px;
+  background: #9F9FFF;
+  margin-left: 1px;
+  white-space: nowrap;
+}
+ul.navbar li a:hover, ul.navbar li a.sfhover { background: #7F7FFF; }
+ul.navbar li:hover ul, ul.navbar li.sfhover ul {
+  display: block;
+  position: absolute;
+}
+ul.navbar li:hover li,ul.navbar li.sfhover li {
+  float: none;
+  font-size: 11px;
+}
+ul.navbar li:hover a,ul.navbar li.sfhover a { background: #7F7FFF; }
+ul.navbar li:hover li a:hover,ul.navbar li.sfhover li a.sfhover { background: #4F4FFF; }
+ul.navbar>li>a {border: none;}
