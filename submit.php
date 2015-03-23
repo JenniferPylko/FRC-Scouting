@@ -16,9 +16,17 @@ Processing...
 	{
 		file_put_contents("robots/$robot.csv","Scouter's Name,Scouter's Team,Event,Match #,Alliance,Position,Robot Moved Into Zone In Autonomous,Robot Moved Tote Into Zone In Autonomous,Robot Stacked Totes In Zone In Autonomous,Robot Moved Container Into Zone In Autonomous,Can Stack On Level 1,Can Stack On Level 2,Can Stack On Level 3,Can Stack On Level 4,Can Stack On Level 5,Can Stack On Level 6,Can Push Litter,Can Pick Up Litter,Can Place Litter In Container,Human Player Can Place Litter In Container,Fouls,Technical Fouls,Can Take Totes From Center, Can Receive Totes From Chute,Can Flip Totes,Can Traverse Scoring Platform,Can Stack Sideways Containers,Comments\n", LOCK_EX);
 	}
-	$csvdata  = "\"".$_POST['name']."\",";
+	$invalid = array();
+	$invalid[0] = "~\n~";
+	$invalid[1] = "~\,~";
+	$invalid[2] = "~\"~";
+	$valid = array();
+	$valid[0] = " ";
+	$valid[1] = ".";
+	$valid[2] = "'";
+	$csvdata  = preg_replace($invalid, $valid, $_POST['name']).",";
 	$csvdata .= $_POST['number'].",";
-	$csvdata .= preg_replace("~\n~","",file_get_contents("events/".$_POST['event']."/name")).",";
+	$csvdata .= preg_replace($invalid, $valid,file_get_contents("events/".$_POST['event']."/name")).",";
 	$csvdata .= $_POST['match'].",";
 	$csvdata .= $_POST['alliance'].",";
 	$csvdata .= $_POST['pos'].",";
@@ -44,7 +52,7 @@ Processing...
 	$csvdata .= (empty($_POST['cft']) ? "0" : "1").",";
 	$csvdata .= (empty($_POST['ctp']) ? "0" : "1").",";
 	$csvdata .= (empty($_POST['cssc']) ? "0" : "1").",";
-	$csvdata .= "\"".$_POST['comments']."\"\n";
+	$csvdata .= preg_replace($invalid, $valid, $_POST['comments'])."\n";
 	file_put_contents("robots/$robot.csv", $csvdata, LOCK_EX | FILE_APPEND);
 ?>
 </body>
