@@ -18,27 +18,26 @@
 			Match Number:<input type="number" name="match"/>
 			<br/>
 			Event:<select name="event">
-				<option value="CODE">Colorado Regional</option>
-				<option value="DCWA">Greater DC Regional</option>
-				<option value="GADU">Peachtree Regional</option>
-				<option value="HIHO">Hawaii Regional</option>
-				<option value="NVLV">Las Vegas Regional</option>
-				<option value="NYLI">SBPLI Long Island Regional</option>
-				<option value="NYRO">Finger Lakes Regional</option>
-				<option value="OHCL">Buckeye Regional</option>
-				<option value="OKOK">Oklahoma Regional</option>
-				<option value="ONNB">North Bay Regional</option>
-				<option value="TXLV">Hub City Regional</option>
-				<option value="CAVE">Ventura Regional</option>
-				<option value="MICEN">FIM District - Centerline Event</option>
-				<option value="MIESC">FIM District - Escanaba Event</option>
-				<option value="MILIV">FIM District - Livonia Event</option>
-				<option value="ORPHI">PNW District - Philomath Event</option>
-				<option value="WAAHS">PNW District - Auburn Event</option>
-				<option value="CTHAR">NE District - Hartford Event</option>
-				<option value="MABOS">NE District - Northeastern University Event</option>
-				<option value="NJBRI">MAR District - Bridgewater-Raritan Event</option>
-				<option value="PADRE">MAR District - Upper Darby Event</option>
+				<?php
+					$events = array();
+					if($handle = opendir("events"))
+					{
+						while(false !== ($entry = readdir($handle)))
+						{
+							if(is_dir("events/$entry") && $entry != '.' && $entry != '..')
+							{
+								$events[] = $entry;
+							}
+						}
+						closedir($handle);
+					}
+					for($i = 0; $i < count($events); ++$i)
+					{
+				?>
+				<option value="<?php echo($events[$i]); ?>"><?php echo(file_get_contents("events/".$events[$i]."/name")); ?></option>
+				<?php
+					}
+				?>
 			</select>
 			<br/>
 			<input type="submit" value="Start Scouting"/> 
