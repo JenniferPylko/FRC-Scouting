@@ -11,6 +11,8 @@
 <body>
 Processing...
 <?php
+	flush();
+	ob_flush();
 	$robot = $_POST['bot'];
 	if(!file_exists("robots/$robot.csv"))
 	{
