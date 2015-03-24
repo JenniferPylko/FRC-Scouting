@@ -7,15 +7,20 @@ article {
 	text-align:center;
 	padding-top:10px;
 	font-family:arial;
+	/*border: 3px solid #1e208d;*/
+}
+article.head {
+	position: fixed;
+	top: 0%;
+	left: 15%;
 	border: 3px solid #1e208d;
 }
 h1 {
-	font-size:60px;
+	font-size:40pt;
 	margin: 5px;
 }
 h1.scouting {
-	text-align:right;
-	padding-right:50%;
+	text-align:center;
 	margin: 5px;
 	margin-right: 0px;
 	color: #1e208d;
@@ -27,7 +32,7 @@ p {
 }
 form.login {
 	text-align:right;
-	padding-right:50%;
+	padding-right:1%;
 }
 
 h3{
@@ -36,9 +41,9 @@ h3{
 	text-align: left;
 }
 /* Used for debugging layout 
-td, tr, th, table{
+tr, td, table{
 	border-style: solid;
-}*/
+} */
 
 .subtable {
 	margin-left: 20pt;

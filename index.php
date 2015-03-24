@@ -4,18 +4,19 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<article>
+	<article style="border: 3px solid #1e208d;">
 		<img src="http://pittsfordrobotics.org/Images/PantherBanner1.png"/>
 	</article>
-	<article>
+	<article style="border: 3px solid #1e208d;">
 		<h1 class="scouting">Match Scouting</h1>
 		<br/>
+		<table style="width: 100%"><tr><td style="width: 50%">
 		<form action="scout.php" method="POST" class="login">
-			Your Team Number:<input type="number" name="num" value="1" min="1"/>
+			Your Team Number:<input type="number" name="num" min="1" required/>
 			<br/>
-			Your Name:<input name="name"/>
+			Your Name:<input name="name" required/>
 			<br/>
-			Match Number:<input type="number" name="match" value="1" min="1"/>
+			Match Number:<input type="number" name="match" min="1" required/>
 			<br/>
 			Event:<select name="event">
 				<?php
@@ -41,7 +42,20 @@
 			</select>
 			<br/>
 			<input type="submit" value="Start Scouting"/> 
-		</form>
+		</form></td>
+		<td style="text-align: left; width: 50%">
+			Event not listed? <input type="button" onclick="window.location='editevent.php'" value="Create One"/>
+			<br/>
+				<form action="results.php" method="POST">
+				If you've scouted, <input type="submit" value="View Results"/>
+				<br/>
+				For Team <input type="number" name="team" min="1" required/>
+				<br/>
+				As <input name="name" required/>
+				<br/>
+				From Team <input type="number" name="scouterteam" min="1" required/>
+			</form>
+		</td></tr></table>
 	</article>
 </body>
 </html>

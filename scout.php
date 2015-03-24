@@ -4,10 +4,10 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<article>
+	<article class="head">
 		<h1 style="color: #1e208d">Match Scouting</h1>
 	</article>
-	<article>
+	<article style="padding-top: 70pt">
 		<?php
 		$evt = $_POST['event'];
 		$matchno = $_POST['match'];
