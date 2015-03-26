@@ -14,6 +14,7 @@ Processing...
 	flush();
 	ob_flush();
 	$robot = $_POST['bot'];
+	mkdir("robots");
 	if(!file_exists("robots/$robot.csv"))
 	{
 		file_put_contents("robots/$robot.csv","Scouter's Name,Scouter's Team,Event,Match #,Alliance,Position,Robot Moved Into Zone In Autonomous,Robot Moved Tote Into Zone In Autonomous,Robot Stacked Totes In Zone In Autonomous,Robot Moved Container Into Zone In Autonomous,Can Stack On Level 1,Can Stack On Level 2,Can Stack On Level 3,Can Stack On Level 4,Can Stack On Level 5,Can Stack On Level 6,Can Push Litter,Can Pick Up Litter,Can Place Litter In Container,Human Player Can Place Litter In Container,Fouls,Technical Fouls,Can Take Totes From Center, Can Receive Totes From Chute,Can Flip Totes,Can Traverse Scoring Platform,Can Stack Sideways Containers,Comments\n", LOCK_EX);
@@ -56,6 +57,7 @@ Processing...
 	$csvdata .= (empty($_POST['cssc']) ? "0" : "1").",";
 	$csvdata .= preg_replace($invalid, $valid, $_POST['comments'])."\n";
 	file_put_contents("robots/$robot.csv", $csvdata, LOCK_EX | FILE_APPEND);
+	file_put_contents("scouters", $_POST["name"]."\n".$_POST["number"]."\n", LOCK_EX | FILE_APPEND);
 ?>
 </body>
 </html>
