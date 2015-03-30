@@ -1,12 +1,12 @@
 <html>
 <head>
 	<title>Processing...</title>
-	<!--<script>
+	<script>
 		window.onload = function()
 		{
 			window.location="index.php";
 		}
-	</script>-->
+	</script>
 </head>
 <body>
 	Processing...
