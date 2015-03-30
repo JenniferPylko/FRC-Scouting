@@ -4,10 +4,10 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<article class="head">
+	<article>
 		<h1 style="color: #1e208d">Match Scouting</h1>
 	</article>
-	<article style="padding-top: 70pt">
+	<article>
 		<?php
 		$evt = $_POST['event'];
 		$matchno = $_POST['match'];
@@ -28,14 +28,14 @@
 		Alliance: <input disabled="1" value="<?php echo($scouters%6 > 2 ? "Blue" : "Red"); ?>" style="color: <?php echo($scouters%6 > 2 ? "blue" : "red"); ?>"/>
 		Match Number: <input disabled="1" value="<?php echo($matchno); ?>"/>
 		<br/><br/>
-		<form action="submit.php" method="POST" style="text-align: left; padding-left: 2%">
+		<form action="submit.php" method="POST" style="text-align: left; padding-left: 2%; width: 100%">
 			<input hidden="1" value="<?php echo($_POST['num']); ?>" name="number"/>
 			<input hidden="1" value="<?php echo($_POST['name']); ?>" name="name"/>
 			<input hidden="1" value="<?php echo($evt); ?>" name="event"/>
 			<input hidden="1" value="<?php echo($currentbot); ?>" name="bot"/>
 			<input hidden="1" value="<?php echo($scouters%6 > 2 ? "Blue" : "Red"); ?>" name="alliance"/>
 			<input hidden="1" value="<?php echo($matchno); ?>" name="match"/>
-			<table>
+			<table style="width: 100%; padding-right: 2%">
 				<tr><td><h3>Autonomous</h3></td></tr>
 				<tr><td><table class="subtable">
 					<tr><td><h4>Moved Into Zone</h4></td></tr>
