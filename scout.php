@@ -82,5 +82,16 @@
 			</table>
 		</form>
 	</article>
+	<article>
+		<a style="text-decoration: none" href="https://github.com/brpylko/FRC-Scouting">
+			<img style="height: 5%" src="GitHub-Mark.png"/>
+		</a>
+		<a style="text-decoration: none" href="https://www.gnu.org/licenses/gpl.html">
+			<img style="height: 5%" src="GPL3.jpg"/>
+		</a>
+		<a style="text-decoration: none" href="http://www3.usfirst.org/roboticsprograms/frc">
+			<img style="height: 5%" src="logo-frc.gif"/>
+		</a>
+	</article>
 </body>
 </html>
