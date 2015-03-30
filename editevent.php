@@ -11,7 +11,7 @@
 		<form action="event.php" method="POST" style="padding-right: 50%; text-align: right">
 				Your Name: <input name="name" required/>
 				<br/>
-				Your Team#: <input name="teamno" required/>
+				Your Team#: <input type="number" min="1" name="teamno" required/>
 				<br/>
 				Event Name: <input name="evtname" required/>
 				<br/>
