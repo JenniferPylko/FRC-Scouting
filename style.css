@@ -40,10 +40,11 @@ h3{
 	font-size: 20pt;
 	text-align: left;
 }
-/* Used for debugging layout */
+/* Used for debugging layout
 tr, td, table, th{
 	border-style: solid;
 }
+*/
 
 .subtable {
 	margin-left: 20pt;
