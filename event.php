@@ -34,7 +34,6 @@
 		$teamdata = curl_get_contents("http://www.thebluealliance.com/api/v2/event/2014onwi/matches?X-TBA-App-Id=frc3181:CrowdScouting:git");
 		$teams = [];
 		preg_match_all("~frc([0-9]+)~m", $teamdata, $teams);
-		var_dump($teams[1]);
 		for($i = 1; $i <= count($teams[1])/6; ++$i)
 		{
 			$matchstring = "";

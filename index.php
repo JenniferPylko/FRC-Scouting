@@ -49,7 +49,28 @@
 				<form action="results.php" method="POST">
 				If you've scouted, <input type="submit" value="View Results"/>
 				<br/>
-				For Team <input type="number" name="team" min="1" required/>
+				For Team <select name="team">
+				<?php
+					$robots = array();
+					if($handle = opendir("robots"))
+					{
+						while(false !== ($entry = readdir($handle)))
+						{
+							if($entry != '.' && $entry != '..')
+							{
+								$robots[] = substr($entry,0,-4);
+							}
+						}
+						closedir($handle);
+					}
+					for($i = 0; $i < count($robots); ++$i)
+					{
+				?>
+				<option value="<?php echo($robots[$i]) ?>"><?php echo($robots[$i]) ?></option>
+				<?php
+					}
+				?>
+				</select>
 				<br/>
 				As <input name="name" required/>
 				<br/>
