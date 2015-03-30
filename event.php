@@ -31,7 +31,7 @@
 		mkdir("events");
 		mkdir("events/".$_POST["evtcode"]);
 		file_put_contents("events/".$_POST["evtcode"]."/name", $_POST["evtname"], LOCK_EX);
-		$teamdata = curl_get_contents("http://www.thebluealliance.com/api/v2/event/2014onwi/matches?X-TBA-App-Id=frc3181:CrowdScouting:git");
+		$teamdata = curl_get_contents("http://www.thebluealliance.com/api/v2/event/".$_POST["evtcode"]."/matches?X-TBA-App-Id=frc3181:CrowdScouting:git");
 		$teams = [];
 		preg_match_all("~frc([0-9]+)~m", $teamdata, $teams);
 		for($i = 1; $i <= count($teams[1])/6; ++$i)

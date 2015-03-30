@@ -5,7 +5,7 @@
 </head>
 <body>
 	<article style="border: 3px solid #1e208d;">
-		<img src="http://pittsfordrobotics.org/Images/PantherBanner1.png"/>
+		<img src="http://pittsfordrobotics.org/Images/PantherBanner1.png" width=100%/>
 	</article>
 	<article style="border: 3px solid #1e208d;">
 		<h1 class="scouting">Match Scouting</h1>
